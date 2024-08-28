@@ -9,45 +9,28 @@
   </head>
   <body>
     <div align="center">
-      <span class="mixue"><img width="10%" src="./mixue.png" alt="" /></span>
+      <span class="mixue"><img width="30%" src="./ahihihi1.png" alt="" /></span>
       <span class="vqmm"><img width="70%" src="./vqmm.png" alt="" /></span>
-      <span class="bgimg"
-        ><img width="100%" height="100%" src="./background.jpg" alt=""
-      /></span>
-      <table cellpadding="0" cellspacing="0" border="0">
+      <span class="bgimg"><img width="100%" height="100%" src="./hinh-nen-mau-trang.jpg" alt="" /></span>
+      
+      <!-- Updated: Added a larger margin to move the wheel down -->
+      <table cellpadding="0" cellspacing="0" border="0" style="margin-top: 100px;">
         <tr>
           <td>
             <span id="spin_start" class="btn" onClick="startSpin();">
-              <span class="logo"
-                ><img width="80px" height="80px" src="./logo.png" alt=""
-              /></span>
+              <span class="logo"><img width="80px" height="80px" src="./Logo tròn.png" alt="Logo tròn" /></span>
             </span>
             <br /><br />
-            <button
-              id="spin_reset"
-              class="btn btn-restart"
-              onClick="resetWheel();"
-            >
-              Quay lại
-            </button>
+            <button id="spin_reset" class="btn btn-restart" onClick="resetWheel();">Quay lại</button>
           </td>
-          <td
-            width="20"
-            height="10"
-            class="the_wheel"
-            align="center"
-            valign="center"
-          >
-            <canvas id="canvas" width="434" height="434">
-              <p align="center">
-                Sorry, your browser doesn't support canvas. Please try another.
-              </p>
+          <td width="20" height="10" class="the_wheel" align="center" valign="center">
+            <canvas id="canvas" width="600" height="600">
+              <p align="center">Vòng quay không hiển thị. Trình duyệt của bạn có hỗ trợ Canvas?</p>
             </canvas>
           </td>
           <!-- <span class="logo"><img src="./logo.png" alt=""></span> -->
         </tr>
       </table>
-      <span class="iloveu"><img width="70%" src="./iloveu.png" alt="" /></span>
     </div>
     <script>
       //Thông số vòng quay
@@ -61,7 +44,6 @@
         theWheel.wheelImage = secondImg; // Make wheelImage equal the loaded image object.
         theWheel.draw(); // Also call draw function to render the wheel.
       };
-
       // Set the image source, once complete this will trigger the onLoad callback (above).
       secondImg.src = "coca.jpg";
       let theWheel = new Winwheel({
@@ -95,10 +77,8 @@
           number: 32, //Số lượng chân. Chia đều xung quanh vòng quay.
         },
       });
-
       //Kiểm tra vòng quay
       let wheelSpinning = false;
-
       //Tạo âm thanh và tải tập tin tick.mp3.
       let audio = new Audio("tick.mp3");
       function playSound() {
@@ -106,7 +86,6 @@
         audio.currentTime = 0;
         audio.play();
       }
-
       //Hiển thị các nút vòng quay
       function statusButton(status) {
         if (status == 1) {
@@ -125,39 +104,31 @@
         }
       }
       statusButton(1);
-
       //startSpin
       function startSpin() {
         // Ensure that spinning can't be clicked again while already running.
         if (wheelSpinning == false) {
           //CSS hiển thị button
           statusButton(2);
-
           //Hàm bắt đầu quay
           theWheel.startAnimation();
-
           //Khóa vòng quay
           wheelSpinning = true;
         }
       }
-
       //Result
       function alertPrize(indicatedSegment) {
         alert("Chúc mừng bạn trúng: " + indicatedSegment.text);
-
         //CSS hiển thị button
         statusButton(3);
       }
-
       //resetWheel
       function resetWheel() {
         //CSS hiển thị button
         statusButton(1);
-
         theWheel.stopAnimation(false); // Stop the animation, false as param so does not call callback function.
         theWheel.rotationAngle = 0; // Re-set the wheel angle to 0 degrees.
         theWheel.draw(); // Call draw to render changes to the wheel.
-
         wheelSpinning = false; // Reset to false to power buttons and spin can be clicked again.
       }
     </script>

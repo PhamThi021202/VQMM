@@ -1,44 +1,25 @@
-/*
-Description:
-    Contains all the styles for the winning wheel page.
-    
-Verison History:
-    2012-01-28, Douglas McKechie
-    - Created based off earlier version.
-    
-    2015-09-26, Douglas McKechie
-    - Minor updates for the 2.0 winwheel example.
-*/
-
 body {
-  font-family: arial;
+    background-color: #fff;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
 }
-
-/* Sets the background image for the wheel */
-
 .mixue {
   position: absolute;
   z-index: 1;
-  left: 14px;
-  top: 10px;
+  left: 80px;
+  top: 20px;
 }
-
 .vqmm {
   position: absolute;
   z-index: 1;
   left: calc(50% - 190px);
-  top: 20px;
+  top: 175px;
 }
-
-.iloveu {
-  position: absolute;
-  z-index: 1;
-  left: -90px;
-  bottom: 10px;
-}
-
 .bgimg {
   position: fixed;
+  z-index: -1;
   top: 0;
   left: 0;
   right: 0;
@@ -52,14 +33,14 @@ tr {
 .logo {
   position: absolute;
   z-index: 10;
-  margin-left: 195px;
-  top: 330px;
+  margin-left: 280px;
+  top: 425px;
 }
 
 .btn-restart {
   position: absolute;
-  top: 600px;
-  right: 172px;
+  top: 730px;
+  right: 255px;
 }
 
 td.the_wheel {
